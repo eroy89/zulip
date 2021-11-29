@@ -684,9 +684,8 @@ export function hide() {
     // before it completely re-rerenders.
     message_view_header.render_title_area();
 
-    // Fixes misaligned message_view and hidden
-    // floating_recipient_bar.
-    navbar_alerts.resize_app();
+    // Fire our custom event
+    $("#message_feed_container").trigger("message_feed_shown");
 
     // This makes sure user lands on the selected message
     // and not always at the top of the narrow.
